@@ -1,0 +1,17 @@
+{
+  "expo": {
+    "name": "Live App",
+    "slug": "live-app",
+    "version": "1.0.0",
+    "platforms": [
+      "android",
+      "web"
+    ],
+    "android": {
+      "package": "com.wajahatsal33m.liveapp.preview"
+    },
+    "web": {
+      "bundler": "metro"
+    }
+  }
+}
