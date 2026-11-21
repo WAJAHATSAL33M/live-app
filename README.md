@@ -10,25 +10,8 @@ Expo React Native starter for Android, with a web export for reviewing screens i
 
 ## Android preview with Expo
 
-1. Open the repository on GitHub and choose **Code → Codespaces → Create codespace on main**. Use its browser terminal. Sign in to Expo and link the repository to an Expo project you own.
+Open the [Expo Builds dashboard](https://expo.dev/accounts/tech-guys/projects/live-app/builds) and use **Build from GitHub** with Android, the desired Git ref, the `preview` build profile, and the Preview environment. Open the completed build on an Android device and choose **Install**. Review internal build access settings before sharing the build link.
 
-   ```sh
-   npm ci
-   npx eas-cli@latest login
-   npx eas-cli@latest init
-   npx eas-cli@latest update:configure
-   ```
-
-2. In `app.json`, confirm that Expo added `extra.eas.projectId` and `updates.url`. Set `runtimeVersion` to `{ "policy": "fingerprint" }` so updates target a matching native runtime. Commit the generated configuration to GitHub before running the workflow. If Expo adds a dependency or updates the lockfile, commit those changes together.
-3. From the configured checkout, run the first cloud build. If you are prompted about Android signing for this new package, let EAS generate the keystore.
-
-   ```sh
-   npx eas-cli@latest build --platform android --profile preview
-   ```
-
-4. Open the Expo build page on your Android phone, choose **Install**, and open the installed Live App. Android may ask you to allow installs from your browser. Review the Expo project's internal build access settings before sharing the link.
-5. To automate updates, create an Expo access token in **Expo account settings → Access Tokens**. In GitHub, go to **Settings → Secrets and variables → Actions → New repository secret**, and save it as `EXPO_TOKEN`. Keep the token out of files and commits.
-6. In GitHub, open **Actions → Android preview → Run workflow**, select `main`, and run it. For automatic publishing, create a branch named `preview` from configured `main`. Push only the changes you want testers to receive to that branch. All published updates target the same Android `preview` channel.
-7. To check a published update, open the installed app with an internet connection, give it time to download the update, then close and reopen it. If you change native dependencies or native configuration and the fingerprint changes, build and install a new APK.
+Expo Workflows publishes compatible Android updates to the `preview` channel on pushes to `main`. Open the installed app online and restart it after the update downloads. If the native runtime fingerprint changes, build and install a new APK.
 
 This repository is public. Review your Vercel deployment and Expo build access settings before sharing any preview that needs restricted access.
