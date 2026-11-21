@@ -12,6 +12,10 @@
     },
     "web": {
       "bundler": "metro"
+    },
+    "owner": "tech-guys",
+    "runtimeVersion": {
+      "policy": "fingerprint"
     }
   }
 }
