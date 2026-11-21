@@ -16,6 +16,14 @@
     "owner": "tech-guys",
     "runtimeVersion": {
       "policy": "fingerprint"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "0ecc9908-c4f4-4361-9025-b66b15af4676"
+      }
+    },
+    "updates": {
+      "url": "https://u.expo.dev/0ecc9908-c4f4-4361-9025-b66b15af4676"
     }
   }
 }
